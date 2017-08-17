@@ -40,13 +40,12 @@ for turn in range(4):
     print "Congratulations! You sank my battleship!" 
     break # no need to continue the game; break from the for loop
   else:
-    if guess_row not in range(5) or \       # situation: input the location outside the board
-    guess_col not in range(5):
+    if guess_row not in range(5) or guess_col not in range(5):   # situation: input the location outside the board
       print "Oops, that's not even in the ocean."
-    elif board[guess_row][guess_col] == "X": # situation: already guess that one
+    elif board[guess_row][guess_col] == "X":   # situation: already guess that one
       print "You guessed that one already."
     else:
-      print "You missed my battleship!" # lose the game. Make an X mark on the guessed place
+      print "You missed my battleship!"   # lose the game. Make an X mark on the guessed place
       board[guess_row][guess_col] = "X"
     print_board(board)
     if turn == 3:
